@@ -1,0 +1,16 @@
+[package]
+name = "dpdu-rust"
+version = "0.8.0"
+authors = ["Ashcon Mohseninia <ashconm@outlook.com>"]
+edition = "2021"
+description = "An implementation of the core D-PDU (ISO 22900-2) library in Rust"
+license = "MIT"
+repository = "https://github.com/rnd-ash/dpdu-rust"
+readme = "README.md"
+keywords = ["ISO 22900", "dpdu", "ecu", "VCI", "diagnostics"]
+
+[badges]
+maintenance = { status = "actively-developed" }
+
+[dependencies]
+bitflags="1.3.2"
