@@ -1,6 +1,6 @@
 [package]
 name = "dpdu-rust"
-version = "0.8.0"
+version = "0.8.5"
 authors = ["Ashcon Mohseninia <ashconm@outlook.com>"]
 edition = "2021"
 description = "An implementation of the core D-PDU (ISO22900-2) library in Rust"

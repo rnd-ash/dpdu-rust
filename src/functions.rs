@@ -31,7 +31,7 @@ pub type PduIoctlFn = extern "C" fn(
     h_cll: u32,
     ioctl_commanded_id: u32,
     p_input_data: *mut PduDataItem,
-    p_output_data: *mut PduDataItem
+    p_output_data: *mut *mut PduDataItem
 ) -> PduError;
 
 /// Gets version information from MVCI module
@@ -172,7 +172,7 @@ pub type PduGetComParamFn = extern "C" fn(
     h_mod: u32,
     h_cll: u32,
     param_id: u32,
-    p_param_items: *mut ParamItem
+    p_param_items: *mut *mut ParamItem
 ) -> PduError;
 
 /// Sets a com param on a ComLogicalLink
@@ -229,7 +229,7 @@ pub type PduCancelComPrimitiveFn = extern "C" fn(
 pub type PduGetEventItemFn = extern "C" fn(
     h_mod: u32,
     h_cll: u32,
-    p_event_item: *mut EventItem
+    p_event_item: *mut *mut EventItem
 ) -> PduError;
 
 /// Destroys a given item
@@ -282,7 +282,7 @@ pub type PduGetModuleIdsFn = extern "C" fn(
 pub type PduGetResourceIdsFn = extern "C" fn(
     h_mod: u32,
     p_resource_id_data: *mut RscData,
-    p_resource_id_list: *mut RscIdItem
+    p_resource_id_list: *mut *mut RscIdItem
 ) -> PduError;
 
 /// Gets a list of conflicting resources
@@ -294,7 +294,7 @@ pub type PduGetResourceIdsFn = extern "C" fn(
 pub type PduGetConflictingResourcesFn = extern "C" fn(
     resource_id: u32,
     p_input_module_list: *mut ModuleItem,
-    p_output_conflict_list: *mut RscConflictItem
+    p_output_conflict_list: *mut *mut RscConflictItem
 ) -> PduError;
 
 /// Gets a list of unique response IDs from a ComLogicalLink
@@ -306,7 +306,7 @@ pub type PduGetConflictingResourcesFn = extern "C" fn(
 pub type PduGetUniqueRespIdTableFn = extern "C" fn(
     h_mod: u32,
     h_cll: u32,
-    p_unique_resp_id_table: *mut UniqueRespIdTableItem
+    p_unique_resp_id_table: *mut *mut UniqueRespIdTableItem
 ) -> PduError;
 
 /// Sets a unique response ID table for the ComLogicalLink
