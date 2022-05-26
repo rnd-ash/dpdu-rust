@@ -238,7 +238,7 @@ pub type PduGetEventItemFn = extern "C" fn(
 /// * p_item - Pointer to item to be destroyed
 pub type PduDestroyItemFn = extern "C" fn(
     p_item: *mut PduItem
-);
+) -> PduError;
 
 /// Registers a callback function
 /// 
